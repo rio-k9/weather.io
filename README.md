@@ -11,7 +11,7 @@ npm install
 
 bower install
 
-cd path/to/mongo
+cd path/to/mongo/bin
 
 mongod
 
@@ -19,7 +19,7 @@ mongod
 
 CMD - Window 2
 
-cd path/to/mongo
+cd path/to/mongo/bin
 
 mongo
 
