@@ -183,7 +183,8 @@ $(document).ready(function(){
       let floatLong = lat_long[1];
       let floatLat = lat_long[0];
       initMap(floatLat, floatLong);
-      toggleLoader()
+      toggleLoader();
+      $('body').removeClass('no-search')
       $('html, body').animate({
         scrollTop: $(".stats.row").offset().top
       }, 2000);

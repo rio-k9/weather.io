@@ -13,12 +13,16 @@ $border-rad: 4px;
 body{
   background: $module-color;
   height:1260px;
+  overflow-y:scroll;
+}
+body.no-search{
+  overflow-y: hidden;
 }
 
 .navbar-light{
   display:flex;
   background: $brand-color;
-  padding: 6px 24px;
+  padding: 0 24px 6px 24px;
   margin-bottom:6px;
 
   .brand-link{

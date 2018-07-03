@@ -3,12 +3,16 @@
 
 body {
   background: #f7f7f7;
-  height: 1260px; }
+  height: 1260px;
+  overflow-y: scroll; }
+
+body.no-search {
+  overflow-y: hidden; }
 
 .navbar-light {
   display: flex;
   background: #0070bb;
-  padding: 6px 24px;
+  padding: 0 24px 6px;
   margin-bottom: 6px; }
   .navbar-light .brand-link {
     color: #ffffff; }
