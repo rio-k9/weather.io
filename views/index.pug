@@ -1,0 +1,36 @@
+extends layout
+
+block header
+  section.header.row.center-md
+    div.col-md-12.col-allcenter
+      span Weather Dashboard
+
+block search
+  section.search.row.center-md
+    div.col-md-12
+      input(class="col-md-12" placeholder="Type a location..." id="city" name="city" autocomplete="off")
+      button.btn.btn-primary.btn-search
+        span.active Search
+        div.form-loader
+
+block stats
+  section.stats.row.center-md.hidden
+    div.col-md-12
+      div.row
+        div.stats-wrap.col-sm
+          div.stats-top Current Temp
+          div.stats-bot
+        div.stats-wrap.col-sm
+          div.stats-top Current Weather
+          div.stats-bot
+        div.stats-wrap.col-sm
+          div.stats-top Sundown
+          div.stats-bot
+
+block graph
+  section.graph.row.center-md.hidden
+    div.col-md-12.col-allcenter#containerGraph
+
+block map
+  section.graph.row.center-md.hidden#containerMap
+

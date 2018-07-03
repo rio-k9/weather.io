@@ -1,0 +1,54 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    nav.navbar.navbar-expand-md.navbar-light
+      a.brand-link.brand-lg(href='/')
+        span Weather.io
+        include /images/cloud.svg
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarCollapse', aria-controls='navbarCollapse', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      |
+      #navbarCollapse.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li.nav-item.active
+            a.brand-link(href='/')
+              | Home
+              span.sr-only (current)
+          |
+        |
+        ul.navbar-nav.ml-auto
+          if user
+            li
+            a.brand-link(href='/users/logout') Logout
+          else
+            li.nav-item
+              a.brand-link(href='/users/login')
+                | Login
+        |
+
+
+    .container
+      != messages('message', locals)
+      if errors
+        each error, i in errors
+          div(class="alert alert-danger") #{error.msg}
+      block content
+      block header
+      block search
+      block stats
+      block graph
+      block map
+
+
+    script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
+    script(src='/bower_components/jquery/dist/jquery.js')
+    script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8ZTauGtl8JGYAIo-GE-K-GrvbgufkwK8&libraries=places")
+    script(src='/vendor/jquery.geocomplete.js')
+    script(src='/bower_components/highcharts/highcharts.js')
+    script(src="/socket.io/socket.io.js")
+    script(src='/javascripts/main.js')
+
